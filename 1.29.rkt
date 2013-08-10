@@ -13,11 +13,13 @@
     (+ x 1))
   (define (even? x)
     (= (remainder x 2) 0))
-  (define (fp x)
-    (cond ((= x 0) (f (+ a (* x (h)))))
-	  ((= x n) (f (+ a (* x (h)))))
-	  ((even? x) (* 2 (f (+ a (* x (h))))))
-	  (else (* 4 (f (+ a (* x (h))))))))
+  (define (y k)
+    (f (+ a (* k (h)))))
+  (define (fp k)
+    (* (y k) (cond ((= k 0) 1)
+		   ((= k n) 1)
+		   ((even? k) 2)
+		   (else 4))))
   (/ (* (h) (sum fp 0 inc n)) 3))
 
 ;; test
